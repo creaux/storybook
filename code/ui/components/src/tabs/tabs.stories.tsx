@@ -220,7 +220,7 @@ export const StatefulDynamicWithOpenTooltip = {
     const addonsTab = await canvas.findByRole('tab', { name: /Addons/ });
 
     await waitFor(async () => {
-      await fireEvent(addonsTab, new MouseEvent('mouseenter', { bubbles: true }));
+      await fireEvent(addonsTab, new MouseEvent('click', { bubbles: true }));
       const tooltip = await screen.getByTestId('tooltip');
       await expect(tooltip).toBeInTheDocument();
     });
